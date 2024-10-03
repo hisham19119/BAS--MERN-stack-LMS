@@ -83,21 +83,6 @@ const getAll = async (Model, req, res) => {
   });
 };
 
-// const getOne = async (Model, populateOptions, req, res) => {
-//   const id = req.params.id;
-//   let query = await Model.findById(id);
-
-//   if (populateOptions) {
-//     query = await query.populate(populateOptions);
-//   }
-//   const document = await query;
-//   if (!document) {
-//     res.status(404).json({ message: "Document not found" });
-//     return;
-//   }
-//   res.json({ status: httpStatusText.SUCCESS, data: { document } });
-// };
-
 const getOne = async (Model, populateOptions, req, res) => {
   const id = req.params.id;
   let query = await Model.findById(id);
@@ -150,7 +135,7 @@ const updateOne = async (Model, req, res) => {
       return res.status(404).json({ message: "No documents updated" });
     }
 
-    const updatedDocument = await Model.findById(id); // Retrieve the updated document
+    const updatedDocument = await Model.findById(id);
     return res.status(200).json({
       status: "success",
       data: { updatedOne: updatedDocument },
