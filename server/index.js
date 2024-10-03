@@ -22,7 +22,7 @@ app.use(
   })
 );
 
-app.use(cors());
+// app.use(cors());
 dbConnection();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
