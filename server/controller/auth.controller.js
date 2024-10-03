@@ -1,5 +1,5 @@
 const User = require("../models/user.model");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const generateJWT = require("../utils/generate.jwt");
 const httpStatusText = require("../utils/httpStatusText");
 
