@@ -14,7 +14,6 @@ app.use(cors());
 dbConnection();
 app.use(express.json());
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
@@ -25,6 +24,7 @@ app.use("/api/courses", courseRouter);
 app.use("/api/chapters", chapterRouter);
 app.use("/api/categories", categoryRouter);
 
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.listen(4000, () => {
   console.log("Server started on port 4000");
 });
