@@ -15,7 +15,9 @@ const coursesIdPageStudentView = () => {
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/courses/${id}`);
+        const response = await fetch(
+          `https://lms-mern-stack-server.vercel.app/api/courses/${id}`
+        );
         if (!response.ok) throw new Error("Failed to fetch course data");
 
         const result = await response.json();
@@ -23,7 +25,7 @@ const coursesIdPageStudentView = () => {
         console.log("Fetched course data:", courseData);
         setTitle(courseData.title);
         setDescription(courseData.description);
-        const imageUrl = `http://localhost:4000/uploads/${courseData.imageCover}`;
+        const imageUrl = `https://lms-mern-stack-server.vercel.app/uploads/${courseData.imageCover}`;
         setImagePreviewUrl(imageUrl);
         setCategory(courseData.category.title);
         setPrice(courseData.price);

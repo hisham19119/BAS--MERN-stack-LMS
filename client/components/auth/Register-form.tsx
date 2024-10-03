@@ -46,7 +46,7 @@ export const RegisterForm = () => {
 
   const onSubmit = (data: any) => {
     data.role = role;
-    fetch("http://localhost:4000/api/users/", {
+    fetch("https://lms-mern-stack-server.vercel.app/api/users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -78,7 +78,7 @@ const ChapterForm = ({
       formData.append("title", data.title);
       formData.append("course", data.course);
       const response = await fetch(
-        `http://localhost:4000/api/courses/${data.course}/chapters`,
+        `https://lms-mern-stack-server.vercel.app/api/courses/${data.course}/chapters`,
         {
           method: "POST",
           body: formData,
@@ -109,7 +109,7 @@ const ChapterForm = ({
       formData.append("course", course);
 
       const response = await fetch(
-        `http://localhost:4000/api/courses/${course}/chapters`,
+        `https://lms-mern-stack-server.vercel.app/api/courses/${course}/chapters`,
         {
           method: "POST",
           body: formData,

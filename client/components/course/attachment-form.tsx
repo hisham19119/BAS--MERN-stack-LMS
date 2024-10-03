@@ -70,10 +70,13 @@ export const AttachmentForm = ({
     const formData = new FormData();
     formData.append("attachment", newAttachment);
     try {
-      const response = await fetch(`http://localhost:4000/api/courses/${id}`, {
-        method: "PATCH",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}`,
+        {
+          method: "PATCH",
+          body: formData,
+        }
+      );
       if (!response.ok) {
         const error = await response.json();
         throw new Error(error.message);

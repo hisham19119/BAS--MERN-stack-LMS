@@ -36,7 +36,7 @@ const ChapterIdPage = () => {
     const fetchChaptereData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/chapters/${chapterId}`
+          `https://lms-mern-stack-server.vercel.app/api/chapters/${chapterId}`
         );
         if (!response.ok) throw new Error("Failed to fetch course data");
         const result = await response.json();
@@ -44,7 +44,7 @@ const ChapterIdPage = () => {
         setTitle(courseData.title);
         setDescription(courseData.description);
         setVideo(courseData.video);
-        const videoUrl = `http://localhost:4000/uploads/${courseData.video}`;
+        const videoUrl = `https://lms-mern-stack-server.vercel.app/uploads/${courseData.video}`;
         setVideoPreviewUrl(videoUrl);
       } catch (error) {
         console.error("Error fetching course data:", error);
@@ -56,7 +56,7 @@ const ChapterIdPage = () => {
   const deleteChapter = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/chapters/${chapterId}`,
+        `https://lms-mern-stack-server.vercel.app/api/chapters/${chapterId}`,
         {
           method: "DELETE",
         }

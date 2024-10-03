@@ -75,7 +75,7 @@ const CourseCardWrapper = ({ courses }: courseCardProps) => {
             >
               <CardHeader className="w-full  p-0 mb-4">
                 <img
-                  src={`http://localhost:4000/uploads/${course.imageCover}`}
+                  src={`https://lms-mern-stack-server.vercel.app/uploads/${course.imageCover}`}
                   alt={course.title}
                   className="h-[200px] w-full object-cover rounded-md mb-4 "
                 />

@@ -50,7 +50,7 @@ const CategoryForm = ({ category, onCategoryChange }: CategoryFormProps) => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/categories?limit=10`
+          `https://lms-mern-stack-server.vercel.app/api/categories?limit=10`
         );
         if (!response.ok) throw new Error("Failed to fetch category data");
         const results = await response.json();
@@ -88,10 +88,13 @@ const CategoryForm = ({ category, onCategoryChange }: CategoryFormProps) => {
     formData.append("category", newCategory);
 
     try {
-      const response = await fetch(`http://localhost:4000/api/courses/${id}`, {
-        method: "PATCH",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}`,
+        {
+          method: "PATCH",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const error = await response.json();

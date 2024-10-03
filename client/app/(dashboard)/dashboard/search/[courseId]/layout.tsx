@@ -18,7 +18,9 @@ export default function dashboardLayout({
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/courses/${id}`);
+        const response = await fetch(
+          `https://lms-mern-stack-server.vercel.app/api/courses/${id}`
+        );
         if (!response.ok) throw new Error("Failed to fetch course data");
 
         const result = await response.json();
@@ -35,7 +37,7 @@ export default function dashboardLayout({
   useEffect(() => {
     const fetchChapters = async () => {
       const chaptersResponse = await fetch(
-        `http://localhost:4000/api/courses/${id}/chapters?limit=1000`
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}/chapters?limit=1000`
       );
       const chaptersResults = await chaptersResponse.json();
       const chapters = chaptersResults.data.data;

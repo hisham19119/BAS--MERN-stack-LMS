@@ -31,7 +31,7 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (data: any) => {
-    fetch("http://localhost:4000/api/users/login", {
+    fetch("https://lms-mern-stack-server.vercel.app/api/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

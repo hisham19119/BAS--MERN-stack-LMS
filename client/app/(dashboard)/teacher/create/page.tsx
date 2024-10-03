@@ -37,10 +37,13 @@ const CreateCoursePage = () => {
       const formData = new FormData();
       formData.append("title", data.title);
 
-      const response = await fetch("http://localhost:4000/api/courses/", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://lms-mern-stack-server.vercel.app/api/courses/",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const error = await response.json();

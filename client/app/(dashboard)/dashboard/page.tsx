@@ -27,7 +27,7 @@ function dashboardPage() {
     const fetchCourseData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/courses/?limit=1000`
+          `https://lms-mern-stack-server.vercel.app/api/courses/?limit=1000`
         );
         if (!response.ok) throw new Error("Failed to fetch course data");
 
@@ -42,7 +42,7 @@ function dashboardPage() {
     const fetchCategoryData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/categories?limit=1000`
+          `https://lms-mern-stack-server.vercel.app/api/categories?limit=1000`
         );
         if (!response.ok) throw new Error("Failed to fetch category data");
 

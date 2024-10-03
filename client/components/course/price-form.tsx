@@ -54,10 +54,13 @@ const PriceForm = ({ price, onPriceChange }: PriceFormProps) => {
     formData.append("price", newPrice);
 
     try {
-      const response = await fetch(`http://localhost:4000/api/courses/${id}`, {
-        method: "PATCH",
-        body: formData,
-      });
+      const response = await fetch(
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}`,
+        {
+          method: "PATCH",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const error = await response.json();

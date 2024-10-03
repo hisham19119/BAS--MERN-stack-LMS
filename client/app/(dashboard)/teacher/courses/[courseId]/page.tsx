@@ -61,7 +61,9 @@ const CourseIdPage = () => {
   useEffect(() => {
     const fetchCourseData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/courses/${id}`);
+        const response = await fetch(
+          `https://lms-mern-stack-server.vercel.app/api/courses/${id}`
+        );
         if (!response.ok) throw new Error("Failed to fetch course data");
 
         const result = await response.json();
@@ -69,7 +71,7 @@ const CourseIdPage = () => {
         setTitle(courseData.title);
         setDescription(courseData.description);
         setImageCover(courseData.imageCover);
-        const imageUrl = `http://localhost:4000/uploads/${courseData.imageCover}`;
+        const imageUrl = `https://lms-mern-stack-server.vercel.app/uploads/${courseData.imageCover}`;
         setImagePreviewUrl(imageUrl);
         setCategory(courseData.category);
         setPrice(courseData.price);
@@ -85,7 +87,7 @@ const CourseIdPage = () => {
   useEffect(() => {
     const fetchChapters = async () => {
       const chaptersResponse = await fetch(
-        `http://localhost:4000/api/courses/${id}/chapters?limit=1000`
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}/chapters?limit=1000`
       );
       const chaptersResults = await chaptersResponse.json();
       const chapters = chaptersResults.data.data;
@@ -100,9 +102,12 @@ const CourseIdPage = () => {
 
   const deleteCourse = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/courses/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://lms-mern-stack-server.vercel.app/api/courses/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to delete course");
       }

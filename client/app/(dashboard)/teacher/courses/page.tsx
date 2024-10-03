@@ -21,7 +21,7 @@ const CoursesPage = () => {
     const fetchCourseData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/api/courses/?limit=50`
+          `https://lms-mern-stack-server.vercel.app/api/courses/?limit=50`
         );
         if (!response.ok) throw new Error("Failed to fetch course data");
 
