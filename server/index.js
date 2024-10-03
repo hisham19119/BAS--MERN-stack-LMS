@@ -25,7 +25,6 @@ app.use("/api/courses", courseRouter);
 app.use("/api/chapters", chapterRouter);
 app.use("/api/categories", categoryRouter);
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+app.listen(4000, () => {
+  console.log("Server started on port 4000");
 });
