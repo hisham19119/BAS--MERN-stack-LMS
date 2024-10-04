@@ -35,7 +35,8 @@ app.use(
     origin:
       "https://lms-mern-stack-client-gif3m4zun-hisham19119s-projects.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type"],
+    // allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
 
