@@ -44,7 +44,7 @@ const chartConfig = {
 
 export function ChartComp() {
   return (
-    <Card className="w-3/5">
+    <Card className="w-3/5 max-md:w-4/5">
       <CardHeader>
         <CardTitle className="text-[var(--textpur)]">
           Registerd users - Monthly
