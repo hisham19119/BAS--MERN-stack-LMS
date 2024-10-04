@@ -32,8 +32,7 @@ const router = express.Router();
 
 app.use(
   cors({
-    origin:
-      "https://lms-mern-stack-client-ljocfxaks-hisham19119s-projects.vercel.app",
+    origin: "https://lms-mern-stack-client.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     // allowedHeaders: ["Content-Type"],
     credentials: true,
