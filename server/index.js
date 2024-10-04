@@ -11,24 +11,24 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const router = express.Router();
 
-const cors = (req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE , PATCH"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+// const cors = (req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, DELETE , PATCH"
+//   );
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Handle preflight requests
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
+//   // Handle preflight requests
+//   if (req.method === "OPTIONS") {
+//     return res.status(200).end();
+//   }
 
-  next(); // Proceed to the next middleware/route handler
-};
+//   next(); // Proceed to the next middleware/route handler
+// };
 
 // Use CORS middleware for all routes in this router
-router.use(cors);
+// router.use(cors);
 
 app.use(
   cors({
